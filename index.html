@@ -7,98 +7,105 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 
-<main class="card">
-	<forms action="#" method="POST">
-		<fieldset>
-			<legend>Customer Information</legend>
-			<div class="form-grid">
-				<label for="name">Name</label>
-				<input type="text" id="name" required placeholder="John Doe" minlength="2">
+<body>
+	<div class="header">
+		<img src="logo.png" alt="Logo">
+		<h1 class="expand">Downtown Pizza</h1>
+	</div>
 
-				<label for="address">Address</label>
-				<input type="text" id="address" required placeholder="123 Main St">
-				
-				<label for="phone">Phone Number</label>
-				<input 
-					type="tel" 
-					id="phone" 
-					required 
-					placeholder="123-456-7890"
-					pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+	<main class="card">
+		<form action="#" method="POST">
+			<fieldset>
+				<legend>Customer Information</legend>
+				<div class="form-grid">
+					<label for="name">Name</label>
+					<input type="text" id="name" required placeholder="John Doe" minlength="2">
+
+					<label for="address">Address</label>
+					<input type="text" id="address" required placeholder="123 Main St">
+					
+					<label for="phone">Phone Number</label>
+					<input 
+						type="tel" 
+						id="phone" 
+						required 
+						placeholder="123-456-7890"
+						pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend>Order Information</legend>
+				<fieldset class="radio">
+					<legend>Crust</legend>
+					<label for="classic" class="radio-item"> <input type="radio" id="classic" name="crust" required> Classic</label>
+					<label for="deep_dish" class="radio-item"> <input type="radio" id="deep_dish" name="crust"> Deep Dish</label>	
+					<label for="thin" class="radio-item"> <input type="radio" id="thin" name="crust"> Thin</label>
+				</fieldset>
+
+				<fieldset class="checkbox">
+					<legend>Toppings</legend>
+					<label for="pepperoni"><input type="checkbox" name="toppings" id="pepperoni"> Pepperoni</label>
+					<label for="chicken"><input type="checkbox" name="toppings" id="chicken"> Chicken</label>
+					<label for="peppers"><input type="checkbox" name="toppings" id="peppers"> Peppers</label>
+					<label for="mushrooms"><input type="checkbox" name="toppings" id="mushrooms"> Mushrooms</label>
+					<label for="onions"><input type="checkbox" name="toppings" id="onions"> Onions</label>
+				</fieldset>
+
+				<label for="quantity"> Quantity: <input type="number" required min="1" max="10"></label>
+			</fieldset>
+
+			<fieldset>
+				<legend>Payment and Delivery</legend>
+				<label for="delivery-instructions">Delivery Instructions: <textarea></textarea></label>
+				<label for="date-time">Date and Time: <input type="datetime-local" required min="2026-01-29T00:00"></label>
+				<label for="payment">Payment Type: <select name="payment" id="payment">
+					<option value="credit">Credit</option>
+					<option value="cash">Cash</option>
+					<option value="debit">Debit</option>
+				</select></label>
+			</fieldset>
+
+			<div>
+				<button type="submit">Submit</button>
+				<button type="reset">Reset</button>
 			</div>
-		</fieldset>
+		</form>
 
-		<fieldset>
-			<legend>Order Information</legend>
-			<fieldset class="radio">
-				<legend>Crust</legend>
-				<label for="classic" class="radio-item"> <input type="radio" id="classic" name="crust" required> Classic</label>
-				<label for="deep_dish" class="radio-item"> <input type="radio" id="deep_dish" name="crust"> Deep Dish</label>	
-				<label for="thin" class="radio-item"> <input type="radio" id="thin" name="crust"> Thin</label>
-			</fieldset>
+		<aside>
+			<table>
+				<caption>Order Summary</caption>
+				<thead>
+					<tr>
+						<th scope="col">Category</th>
+						<th scope="col">Selection</th>
+						<th scope="col">Price</th>
+					</tr>
+				</thead>
 
-			<fieldset class="checkbox">
-				<legend>Toppings</legend>
-				<label for="pepperoni"><input type="checkbox" name="toppings" id="pepperoni"> Pepperoni</label>
-				<label for="chicken"><input type="checkbox" name="toppings" id="chicken"> Chicken</label>
-				<label for="peppers"><input type="checkbox" name="toppings" id="peppers"> Peppers</label>
-				<label for="mushrooms"><input type="checkbox" name="toppings" id="mushrooms"> Mushrooms</label>
-				<label for="onions"><input type="checkbox" name="toppings" id="onions"> Onions</label>
-			</fieldset>
-
-			<label for="quantity"> Quantity: <input type="number" required min="1" max="10"></label>
-		</fieldset>
-
-		<fieldset>
-			<legend>Payment and Delivery</legend>
-			<label for="delivery-instructions">Delivery Instructions: <textarea></textarea></label>
-			<label for="date-time">Date and Time: <input type="datetime-local" required min="2026-01-29T00:00"></label>
-			<label for="payment">Payment Type: <select name="payment" id="payment">
-				<option value="credit">Credit</option>
-				<option value="cash">Cash</option>
-				<option value="debit">Debit</option>
-			</select></label>
-		</fieldset>
-
-		<div>
-			<button type="submit">Submit</button>
-			<button type="reset">Reset</button>
-		</div>
-	</form>
-
-	<aside>
-		<table>
-			<caption>Order Summary</caption>
-			<thead>
-				<tr>
-					<th scope="col">Category</th>
-					<th scope="col">Selection</th>
-					<th scope="col">Price</th>
-				</tr>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td>Base Pizza</td>
-					<td>Large, Classic</td>
-					<td>$16.99</td>
-				</tr>
-				<tr>
-					<td>Toppings</td>
-					<td>Pepperoni, Mushrooms</td>
-					<td>$4.00</td>
-				</tr>
-				<tr>
-					<td>Delivery</td>
-					<td>Standard Delivery</td>
-					<td>$3.99</td>
-				</tr>
-				<tr>
-					<td>Total:</td>
-					<td> </td>
-					<td>$24.98</td>
-				</tr>
-			</tbody>
-		</table>
-	</aside>
-</main>
+				<tbody>
+					<tr>
+						<td>Base Pizza</td>
+						<td>Large, Classic</td>
+						<td>$16.99</td>
+					</tr>
+					<tr>
+						<td>Toppings</td>
+						<td>Pepperoni, Mushrooms</td>
+						<td>$4.00</td>
+					</tr>
+					<tr>
+						<td>Delivery</td>
+						<td>Standard Delivery</td>
+						<td>$3.99</td>
+					</tr>
+					<tr>
+						<td>Total:</td>
+						<td> </td>
+						<td>$24.98</td>
+					</tr>
+				</tbody>
+			</table>
+		</aside>
+	</main>
+</body>
